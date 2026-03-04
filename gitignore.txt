@@ -1,0 +1,15 @@
+```
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Database
+bot.db
+
+# Environment
+.env
+.env.local
+*.env.*
+```
