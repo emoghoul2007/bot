@@ -123,7 +123,10 @@ async def crypto_payment(callback: CallbackQuery, state: FSMContext):
     data = await state.get_data()
     photos = data.get("photos", [])
 
-    price = PRODUCT_PRICES_CRYPTO[product_type]
+    if user_id == ADMIN_ID:
+         price = TEST_PRICE
+    else:
+         price = PRODUCT_PRICES_STARS[product_type]
 
     crypto = AioCryptoPay(
         token=CRYPTO_PAY_TOKEN,
