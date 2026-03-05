@@ -169,7 +169,17 @@ async def process_crypto_payment(callback: CallbackQuery, state: FSMContext):
             ADMIN_ID,
             f"New crypto payment order #{order_id} from user {user_id} for {product_type} pack"
         )
-        
+
+        data = await state.get_data()
+        photos = data.get('photos', [])
+
+for photo in photos:
+    await callback.bot.send_photo(
+        ADMIN_ID,
+        photo=photo,
+        caption=f"Order #{order_id}\nUser: {user_id}"
+    )
+    
         await state.set_state(OrderStates.waiting_for_crypto_payment)
     except Exception as e:
         await callback.message.answer(f"Error creating invoice: {str(e)}")
