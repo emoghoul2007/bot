@@ -11,9 +11,9 @@ PRODUCT_PRICES_CRYPTO = {
 }
 
 PRODUCT_PRICES_STARS = {
-    "date": 50,
-    "undress": 50,
-    "sex": 50,
+    "date": 500,
+    "undress": 500,
+    "sex": 500,
     "combo": 1290
 }
 
